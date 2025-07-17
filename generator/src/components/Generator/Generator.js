@@ -6,17 +6,7 @@ const Generator = () => {
     const [qrCodeUrl, setQrCodeUrl] = useState("");
 
     const generateQRCode = () => {
-        let url;
-
-        //if e else de urls especificas 
-
-        if (text.trim().toLowerCase() === "atila") {
-            url = "https://www.instagram.com/p/C_jKryxReG_/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==";
-        } else if (text.trim().toLowerCase() === "gay") {
-            url = "https://www.instagram.com/_fe.bruxo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
-        } else {
-            url = text;
-        }
+        let url = text;
 
         if (url.trim() !== "") {
             setQrCodeUrl(`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}`);
